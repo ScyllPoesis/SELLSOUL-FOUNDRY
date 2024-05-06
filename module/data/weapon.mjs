@@ -34,10 +34,10 @@ export default class SellSoulWeaponProfile extends foundry.abstract.TypeDataMode
     }
   }
 
-  getRollData() {
-    const data = { ap: this.ap, sal: this.sal, ran: this.ran };
-    data[slider] = this.dam.slider;
+  // getRollData() {
+  //   const data = { ap: this.ap, sal: this.sal, ran: this.ran };
+  //   data[slider] = this.dam.slider;
 
-    return data;
-  }
+  //   return data;
+  // }
 }

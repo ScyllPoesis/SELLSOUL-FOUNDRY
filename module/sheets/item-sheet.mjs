@@ -26,13 +26,7 @@ export class SellSoulItemSheet extends ItemSheet {
 
   /** @override */
   get template() {
-    const path = 'systems/sellsoul/templates/item';
-    // Return a single sheet for all item types.
-    // return `${path}/item-sheet.hbs`;
-
-    // Alternatively, you could use the following return statement to do a
-    // unique item sheet by type, like `weapon-sheet.hbs`.
-    return `${path}/item-${this.item.type}-sheet.hbs`;
+    return `systems/sellsoul/templates/item/item-${this.item.type}-sheet.hbs`;
   }
 
   /* -------------------------------------------- */
@@ -55,7 +49,7 @@ export class SellSoulItemSheet extends ItemSheet {
     // Prepare active effects for easier access
     context.effects = prepareActiveEffectCategories(this.item.effects);
 
-    console.log(context)
+    console.log(context);
 
     return context;
   }
