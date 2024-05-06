@@ -1,5 +1,5 @@
 // Export Actors
-export { default as SellSoulActorBase } from "./actor-base.mjs";
+export { default as SellSoulUnitBase } from "./unit-base.mjs";
 export { default as SellSoulPlayerUnit } from "./player_unit.mjs";
 export { default as SellSoulEnemyUnit } from "./enemy_unit.mjs";
 

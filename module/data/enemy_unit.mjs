@@ -1,6 +1,6 @@
-import SellSoulActorBase from "./actor-base.mjs";
+import SellSoulUnitBase from "./unit-base.mjs";
 
-export default class SellSoulEnemyUnit extends SellSoulActorBase {
+export default class SellSoulEnemyUnit extends SellSoulUnitBase {
 
   static defineSchema() {
     const fields = foundry.data.fields;
