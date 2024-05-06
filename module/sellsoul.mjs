@@ -26,15 +26,6 @@ Hooks.once('init', function () {
   // Add custom constants for configuration.
   CONFIG.SELLSOUL = SELLSOUL;
 
-  /**
-   * Set an initiative formula for the system
-   * @type {String}
-   */
-  CONFIG.Combat.initiative = {
-    formula: '1d20 + @abilities.dex.mod',
-    decimals: 2,
-  };
-
   // Define custom Document and DataModel classes
   CONFIG.Actor.documentClass = SellSoulActor;
 
@@ -49,7 +40,7 @@ Hooks.once('init', function () {
   CONFIG.Item.dataModels = {
     item: models.SellSoulItem,
     feature: models.SellSoulFeature,
-    spell: models.SellSoulSpell
+    weapon: models.SellSoulWeaponProfile
   }
 
   // Active Effects are never copied to the Actor,
