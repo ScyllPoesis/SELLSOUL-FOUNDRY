@@ -8,13 +8,35 @@
 
   {{!-- Sheet Body --}}
   <section class="sheet-body">
-    {{!-- As you add new fields, add them in here! --}}
-    <div class="resource">
-      <label class="resource-label">{{localize 'SELLSOUL.Item.Weapon.IsCore'}}</label>
-      <input type="checkbox" name="system.core" {{checked system.core}}>
-
-      <input type="number" name="system.ap" value="{{system.ap}}" data-dtype="Number" />
+    <div class="resources grid grid-4col">
+      <div class="resource flex-group-center">
+        <label for="system.health.value" class="resource-label">Is Core?</label>
+        <div class="resource-content flexrow flex-center flex-between">
+          <input type="checkbox" name="system.core" {{checked system.core}}>
+        </div>
+      </div>
+      <div class="resource flex-group-center">
+        <label for="system.health.value" class="resource-label">AP</label>
+        <div class="resource-content flexrow flex-center flex-between">
+          <input type="number" name="system.ap" value="{{system.ap}}" data-dtype="Number" />
+        </div>
+      </div>
+      <div class="resource flex-group-center">
+        <label for="system.health.value" class="resource-label">RANGE</label>
+        <div class="resource-content flexrow flex-center flex-between">
+          <input type="number" name="system.sal" value="{{system.sal}}" data-dtype="Number" />
+        </div>
+      </div>
+      <div class="resource flex-group-center">
+        <label for="system.health.value" class="resource-label">SALVO</label>
+        <div class="resource-content flexrow flex-center flex-between">
+          <input type="number" name="system.ran" value="{{system.ran}}" data-dtype="Number" />
+        </div>
+      </div>
     </div>
-    </div>
+    <hr style="border-top: 3px solid #bbb" />
+    <table>
+      {{}}
+    </table>
   </section>
 </form>
