@@ -14,13 +14,6 @@ export class SellSoulActorSheet extends ActorSheet {
       classes: ['sellsoul', 'sheet', 'actor'],
       width: 600,
       height: 600,
-      tabs: [
-        {
-          navSelector: '.sheet-tabs',
-          contentSelector: '.sheet-body',
-          initial: 'features',
-        },
-      ],
     });
   }
 
@@ -47,18 +40,20 @@ export class SellSoulActorSheet extends ActorSheet {
     context.flags = actorData.flags;
 
     // Prepare character data and items.
-    if (actorData.type == 'character') {
+    if (actorData.type == 'player_unit') {
       this._prepareItems(context);
       this._prepareCharacterData(context);
     }
 
     // Prepare NPC data and items.
-    if (actorData.type == 'npc') {
+    if (actorData.type == 'enemy_unit') {
       this._prepareItems(context);
     }
 
     // Add roll data for TinyMCE editors.
     context.rollData = context.actor.getRollData();
+
+    console.log(context);
 
     // Prepare active effects
     context.effects = prepareActiveEffectCategories(
@@ -112,18 +107,16 @@ export class SellSoulActorSheet extends ActorSheet {
     for (let i of context.items) {
       i.img = i.img || Item.DEFAULT_ICON;
       // Append to gear.
-      if (i.type === 'item') {
+      if (i.type === 'equipment') {
         gear.push(i);
       }
       // Append to features.
-      else if (i.type === 'feature') {
+      else if (i.type === 'trait') {
         features.push(i);
       }
       // Append to spells.
-      else if (i.type === 'spell') {
-        if (i.system.spellLevel != undefined) {
-          spells[i.system.spellLevel].push(i);
-        }
+      else if (i.type === 'weapon') {
+        spells[0].push(i);
       }
     }
 
