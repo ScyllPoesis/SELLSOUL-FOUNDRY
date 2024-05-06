@@ -1,6 +1,6 @@
 import SellSoulActorBase from "./actor-base.mjs";
 
-export default class SellSoulCharacter extends SellSoulActorBase {
+export default class SellSoulPlayerUnit extends SellSoulActorBase {
 
   static defineSchema() {
     const fields = foundry.data.fields;
@@ -42,7 +42,7 @@ export default class SellSoulCharacter extends SellSoulActorBase {
     // Copy the ability scores to the top level, so that rolls can use
     // formulas like `@str.mod + 4`.
     if (this.abilities) {
-      for (let [k,v] of Object.entries(this.abilities)) {
+      for (let [k, v] of Object.entries(this.abilities)) {
         data[k] = foundry.utils.deepClone(v);
       }
     }

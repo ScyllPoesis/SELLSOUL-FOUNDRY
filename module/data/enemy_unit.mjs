@@ -1,6 +1,6 @@
 import SellSoulActorBase from "./actor-base.mjs";
 
-export default class SellSoulNPC extends SellSoulActorBase {
+export default class SellSoulEnemyUnit extends SellSoulActorBase {
 
   static defineSchema() {
     const fields = foundry.data.fields;
@@ -9,7 +9,7 @@ export default class SellSoulNPC extends SellSoulActorBase {
 
     schema.cr = new fields.NumberField({ ...requiredInteger, initial: 1, min: 0 });
     schema.xp = new fields.NumberField({ ...requiredInteger, initial: 0, min: 0 });
-    
+
     return schema
   }
 

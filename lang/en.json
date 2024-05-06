@@ -45,12 +45,12 @@
   },
   "TYPES": {
     "Actor": {
-      "character": "Character",
-      "npc": "NPC"
+      "player_unit": "Player Unit",
+      "enemy_unit": "ENEMY Unit"
     },
     "Item": {
-      "item": "Item",
-      "feature": "Feature",
+      "equipment": "Equipment",
+      "trait": "Trait",
       "weapon": "Weapon Profile"
     }
   }

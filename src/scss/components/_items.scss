@@ -113,9 +113,8 @@
   }
 }
 
-// Example style for SellSoul (can be removed if not needed).
-.item-formula {
-  
-  flex: 0 0 200px;
-  padding: 0 8px;
+table.damage-slider td {
+  text-align:center;
+  margin: auto;
+  width: 50%;
 }

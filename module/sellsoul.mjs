@@ -33,13 +33,13 @@ Hooks.once('init', function () {
   // for the base actor/item classes - they are included
   // with the Character/NPC as part of super.defineSchema()
   CONFIG.Actor.dataModels = {
-    character: models.SellSoulCharacter,
-    npc: models.SellSoulNPC
+    player_unit: models.SellSoulPlayerUnit,
+    enemy_unit: models.SellSoulEnemyUnit
   }
   CONFIG.Item.documentClass = SellSoulItem;
   CONFIG.Item.dataModels = {
-    item: models.SellSoulItem,
-    feature: models.SellSoulFeature,
+    equipment: models.SellSoulEquipment,
+    trait: models.SellSoulTrait,
     weapon: models.SellSoulWeaponProfile
   }
 

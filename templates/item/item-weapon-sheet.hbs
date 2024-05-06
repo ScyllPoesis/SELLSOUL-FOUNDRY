@@ -12,7 +12,7 @@
       <div class="resource flex-group-center">
         <label for="system.health.value" class="resource-label">Is Core?</label>
         <div class="resource-content flexrow flex-center flex-between">
-          <input type="checkbox" name="system.core" {{checked system.core}}>
+          <input style="margin:auto" type="checkbox" name="system.core" {{checked system.core}}>
         </div>
       </div>
       <div class="resource flex-group-center">
@@ -35,8 +35,17 @@
       </div>
     </div>
     <hr style="border-top: 3px solid #bbb" />
-    <table>
-      {{}}
+    <table class="damage-slider">
+      <tr>
+        <th>POWER BASELINE</th>
+        <th>DAMAGE</th>
+      </tr>
+      {{#each system.dam.slider as |val key|}}
+      <tr>
+        <td>{{key}}</td>
+        <td>{{val}}</td>
+      </tr>
+      {{/each}}
     </table>
   </section>
 </form>
