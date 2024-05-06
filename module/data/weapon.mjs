@@ -15,7 +15,7 @@ export default class SellSoulWeaponProfile extends foundry.abstract.TypeDataMode
     // DAM slider with effective DAM field.
     schema.dam = new fields.SchemaField({
       eff: new fields.NumberField({ ...requiredInteger, initial: 1 }),
-      slider: new fields.ObjectField({ initial: { 1: 1, 2: 2 } })
+      slider: new fields.ObjectField({ initial: { 2: 2, 6: 4, 4: 3 } })
     });
 
     // Attribute fields.
