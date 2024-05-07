@@ -48,6 +48,7 @@ export class SellSoulItemSheet extends ItemSheet {
 
     // Prepare active effects for easier access
     context.effects = prepareActiveEffectCategories(this.item.effects);
+    context.traitTypes = CONFIG.SELLSOUL.traitTypes;
 
     console.log(context);
 

@@ -15,7 +15,8 @@ export default class SellSoulWeaponProfile extends foundry.abstract.TypeDataMode
     // DAM slider with effective DAM field.
     schema.dam = new fields.SchemaField({
       eff: new fields.NumberField({ ...requiredInteger, initial: 1 }),
-      slider: new fields.ObjectField({ initial: { 2: 2, 6: 4, 4: 3 } })
+      slider: new fields.ObjectField({ initial: {} }),
+      text: new fields.StringField({ initial: "{ \"2\": 2, \"6\": 4, \"4\": 3 }" }),
     });
 
     // Attribute fields.
@@ -27,9 +28,15 @@ export default class SellSoulWeaponProfile extends foundry.abstract.TypeDataMode
   }
 
   prepareDerivedData() {
+    // Translate DAM slider
+    try {
+      this.dam.slider = JSON.parse(this.dam.text.replace("<p>", "").replace("</p>", ""));
+    } catch (err) {
+      console.error(err);
+    }
+
     // Calculate current effective DAM.
     for (const key in this.dam.slider) {
-      console.log(key);
       this.dam.eff = this.dam.slider[key];
     }
   }

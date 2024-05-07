@@ -238,11 +238,6 @@
 .sellsoul .sheet-tabs {
   flex: 0;
 }
-.sellsoul .sheet-body,
-.sellsoul .sheet-body .tab,
-.sellsoul .sheet-body .tab .editor {
-  height: 100%;
-}
 .sellsoul .tox .tox-editor-container {
   background: #fff;
 }
@@ -293,7 +288,8 @@
   align-items: center;
   display: flex;
 }
-.sellsoul .items-list .item-name h3, .sellsoul .items-list .item-name h4 {
+.sellsoul .items-list .item-name h3,
+.sellsoul .items-list .item-name h4 {
   margin: 0;
   white-space: nowrap;
   overflow-x: hidden;
@@ -353,6 +349,23 @@
   text-align: center;
   margin: auto;
   width: 50%;
+}
+.sellsoul .dam-slider-edit-label {
+  float: right;
+  padding-right: 32px;
+  padding-top: 8px;
+  height: 50px;
+  color: #666;
+  cursor: pointer;
+}
+.sellsoul .sheetEditor {
+  min-height: 64px;
+}
+.sellsoul .sellsoul-block-label {
+  letter-spacing: 2px;
+  font-family: serif;
+  font-weight: bold;
+  font-size: 18px;
 }
 .sellsoul .effects .item .effect-source,
 .sellsoul .effects .item .effect-duration,
