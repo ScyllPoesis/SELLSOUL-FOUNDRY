@@ -367,6 +367,12 @@
   font-weight: bold;
   font-size: 18px;
 }
+.sellsoul .sellsoul-input-label {
+  letter-spacing: 0.6px;
+  font-family: serif;
+  font-weight: bold;
+  font-size: 15px;
+}
 .sellsoul .effects .item .effect-source,
 .sellsoul .effects .item .effect-duration,
 .sellsoul .effects .item .effect-controls {

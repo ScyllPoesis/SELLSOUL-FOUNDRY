@@ -4,11 +4,9 @@ export default class SellSoulEquipment extends foundry.abstract.TypeDataModel {
     const requiredInteger = { required: true, nullable: false, integer: true };
     const schema = {};
 
-    schema.rules = new fields.StringField({ required: true, initial: "This unit is granted some boon or bane." });
-    schema.type = new fields.StringField({ required: true, initial: "unit" });
-    schema.description = new fields.StringField({ required: true, initial: "An assortment of characteristics describes this trait." });
-
-    schema.required
+    schema.rules = new fields.StringField({ required: true, initial: "This equipment may grant bonuses or profiles." });
+    schema.description = new fields.StringField({ required: true, initial: "An assortment of characteristics that detail this equipment." });
+    schema.required = new fields.StringField({ required: true, initial: "INFANTRY" });
 
     return schema;
   }

@@ -1,7 +1,7 @@
 export default class SellSoulWeaponProfile extends foundry.abstract.TypeDataModel {
   static defineSchema() {
     const fields = foundry.data.fields;
-    const requiredInteger = { required: true, nullable: false, integer: true };
+    const requiredInteger = { required: true, nullable: false };
     const schema = {};
 
     // Whether this profile should be treated as a CORE WEAPON.
@@ -19,10 +19,17 @@ export default class SellSoulWeaponProfile extends foundry.abstract.TypeDataMode
       text: new fields.StringField({ initial: "{ \"2\": 2, \"6\": 4, \"4\": 3 }" }),
     });
 
+    // Charges fields.
+    schema.charges = new fields.SchemaField({
+      value: new fields.NumberField({ ...requiredInteger, initial: 1 }),
+      max: new fields.NumberField({ ...requiredInteger, initial: 1 }),
+      reload: new fields.NumberField({ ...requiredInteger, initial: 1 }),
+    });
+
     // Attribute fields.
     schema.ap = new fields.NumberField({ ...requiredInteger, initial: 0, label: "AP", hint: "Armor Penetration" });
-    schema.sal = new fields.NumberField({ ...requiredInteger, initial: 0 });
-    schema.ran = new fields.NumberField({ ...requiredInteger, initial: 1 });
+    schema.sal = new fields.NumberField({ ...requiredInteger, initial: 0, label: "SAL", hint: "Salvo Size" });
+    schema.ran = new fields.NumberField({ ...requiredInteger, initial: 1, label: "RAN", hint: "Range" });
 
     return schema;
   }

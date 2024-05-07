@@ -3,6 +3,24 @@
     <img class="profile-img" src="{{item.img}}" data-edit="img" title="{{item.name}}" />
     <div class="header-fields">
       <h1 class="charname"><input name="name" type="text" value="{{item.name}}" placeholder="Name" /></h1>
+      {{#unless system.core}}
+      <div class="resources grid grid-4col">
+        <div class="resource flex-group-center">
+          <label for="system.charges.value" class="resource-label">Charges</label>
+          <div class="resource-content flexrow flex-center flex-between">
+            <input type="text" name="system.charges.value" value="{{system.charges.value}}" data-dtype="Number" />
+            <span> / </span>
+            <input type="text" name="system.charges.max" value="{{system.charges.max}}" data-dtype="Number" />
+          </div>
+        </div>
+        <div class="resource flex-group-center">
+          <label for="system.charges.reload" class="resource-label">Reload</label>
+          <div class="resource-content flexrow flex-center flex-between">
+            <input type="text" name="system.charges.reload" value="{{system.charges.reload}}" data-dtype="Number" />
+          </div>
+        </div>
+      </div>
+      {{/unless}}
     </div>
   </header>
 
@@ -18,19 +36,19 @@
       <div class="resource flex-group-center">
         <label for="system.health.value" class="resource-label">AP</label>
         <div class="resource-content flexrow flex-center flex-between">
-          <input type="number" name="system.ap" value="{{system.ap}}" data-dtype="Number" />
+          <input type="text" name="system.ap" value="{{system.ap}}" data-dtype="Number" />
         </div>
       </div>
       <div class="resource flex-group-center">
         <label for="system.health.value" class="resource-label">RANGE</label>
         <div class="resource-content flexrow flex-center flex-between">
-          <input type="number" name="system.sal" value="{{system.sal}}" data-dtype="Number" />
+          <input type="text" name="system.sal" value="{{system.sal}}" data-dtype="Number" />
         </div>
       </div>
       <div class="resource flex-group-center">
         <label for="system.health.value" class="resource-label">SALVO</label>
         <div class="resource-content flexrow flex-center flex-between">
-          <input type="number" name="system.ran" value="{{system.ran}}" data-dtype="Number" />
+          <input type="text" name="system.ran" value="{{system.ran}}" data-dtype="Number" />
         </div>
       </div>
     </div>
